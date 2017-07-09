@@ -1,0 +1,39 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+var count=4;
+   function foo(){
+        var table=[count];
+
+/* Build the table. */
+   while(count-- >0)
+  {
+  table.push([]);
+  }
+
+/* Fill it with numbers. */
+for(var count = 1; count<table.length; count++) 
+    {
+    table[count].push(count);
+     }
+  return table;
+   }
+ foo(); 
+</script>
+</body>
+</html>
+
+<!-- the result will be null -->
+<!-- here is the problem occured by javascript hoisting rule-->
+<!-- i mean javascript has only function scope it does not have any block scope like 
+ other language -->
+<!-- here loops doesn't have their own scope so the looping variable are actually
+ hoisted in to the function scope -->
+<!-- For the first two uses of count, it isn’t actually a free variable 
+like it appears to be -->
+<!-- whereas It refers to the for loop variable count even though it’s declared 
+later in the function -->
+<!-- due to the iteration of count variable the compiler becomes hampered -->
+<!-- thats' why we got null screen or blank screen as a output --> 

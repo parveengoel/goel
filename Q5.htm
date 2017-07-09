@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+var lorem={ipsum:1};
+var output=(function()
+{
+delete lorem.ipsum;
+return lorem.ipsum;
+})();
+console.log(output);
+</script>
+</body>
+</html>
+
+<!-- Result will be undefined -->
+
+<!-- beacuse here var output is a dynamic function and function can not be 
+print with console.log or document.write -->
+
+<!--  A function is called directly which is a right syntax for function
+     e.g.   output();-->
+	 
+<!-- solved-->	 
